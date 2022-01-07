@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: 2bcore
+    environment:
+      - PORT=3050
+    depends_on:
+      - mongoDB
+
+  mongoDB:
+    image: mongo:latest
+    ports:
+    - 27017:27017
+    volumes:
+    - db-data:/data/db
+ 
+volumes:
+  db-data:

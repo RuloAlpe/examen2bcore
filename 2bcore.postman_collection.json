@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "66664db0-c82e-4926-9e47-0c77bf29ad6a",
+		"name": "2bcore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Raul Alanis\",\n    \"email\": \"usuario@prueba.com\",\n    \"rol\": \"usuario\",\n    \"password\": \"abc123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "172.22.0.3:3050/api",
+					"host": [
+						"172",
+						"22",
+						"0",
+						"3"
+					],
+					"port": "3050",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar usuarios con auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW9AcHJ1ZWJhLmNvbSIsInJvbCI6InVzdWFyaW8iLCJpYXQiOjE2NDE1OTAwNzksImV4cCI6MTY0MTU5MzY3OX0.lzEHFYc6ZcLE1V40c21qZvwVWvxQOW5W4ygNJv4SU80",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "172.22.0.3:3050/api",
+					"host": [
+						"172",
+						"22",
+						"0",
+						"3"
+					],
+					"port": "3050",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"usuario@prueba.com\",\n    \"password\": \"abc123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "172.22.0.3:3050/api/login",
+					"host": [
+						"172",
+						"22",
+						"0",
+						"3"
+					],
+					"port": "3050",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
